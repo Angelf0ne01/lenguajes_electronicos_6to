@@ -1,46 +1,55 @@
 # Ejercicio 6
+
 /
 Realizar un programa el cual me permita ver en un LED RGB el estado de la temperatura hambiente.
 
 Si la temperatura es menor a 15º C, el LED azul se encenderá.
 Si la temperatura se encutra entre 15º y 25º C, el LED verde se encenderá.
-Si la temperatura es mayor a 25º C, el LED rojo se encenderá. 
+Si la temperatura es mayor a 25º C, el LED rojo se encenderá.
 
 ## Diagrama de clase
+
 Se debe construir un diagrama de clases, para ellos vamos a realizar 3 pasos para poder construir nuestro diagrama.
 
 ### Paso 1 - Entidades.
+
 Para poder realizar este programa se debe detectar las entidades/objectos que interactua en nuestro sistema.
 De forma rapida podemos detectar que tenemos 2 entitdades.
+
 - Led
 - SensorTemperatura
 
 ### Paso 2 - Modelar.
+
 En este paso, vamos a tomar cada una de las entidades y vamos a razonar de forma logica los atributos y acciones/comportamiento que puede tomar nuestras entidades.
 
 Primero vamos a arrancar por el led.
+
 ##### LED
+
 Vamos a razonar los comportamientos de un led:
 Un led se puede encender o apagar y para controlar este estado, se debe manejar la salida digital de un pin.
 
 De esta forma podemos detectar que vamos a tener un atributo llamado pin, el cual va ser un entero, ya que el led se puede conectar un pin del microcontrolador el cual va estar identificado por un numero entero.
 
 Tambien podemos ver que va a tener 2 comportamiento (funciones o methodos):
- encender y apagar.
- El cual no nos intereza que retorne nada, por lo tanto ambos van a ser del tipo VOID.
+encender y apagar.
+El cual no nos intereza que retorne nada, por lo tanto ambos van a ser del tipo VOID.
 
 en resumen:
-###### Atributos:
-|  nombre de variable |  tipo de dato |
-| ------------ | ------------ |
-|   pin |  int |
 
+###### Atributos:
+
+| nombre de variable | tipo de dato |
+| ------------------ | ------------ |
+| pin                | int          |
 
 ###### Acciones:
-|  metodos |  tipo de dato |
-| ------------ | ------------ |
-|   encender() |  void |
-|   apagar() |  void |
+
+| metodos    | tipo de dato |
+| ---------- | ------------ |
+| encender() | void         |
+| apagar()   | void         |
 
 ##### SensorTemperatura
 
@@ -52,22 +61,24 @@ De esta forma podemos detectar que vamos a tener un atributo llamado pin, el cua
 Tambien podemos ver que va a tener 1 comportamiento (funciones o methodos), el cual va ser saber leer la temperatura actual en grados celsius.
 Como la temperatura puede ir variar su valores de forma positiva y negativa, vamos a utilziar un tipo de dato entero, ya que no nos interesa sus decimales.
 
-
-
 en resumen:
-###### Atributos:
-|  nombre de variable |  tipo de dato |
-| ------------ | ------------ |
-|   pin |  int |
 
+###### Atributos:
+
+| nombre de variable | tipo de dato |
+| ------------------ | ------------ |
+| pin                | int          |
 
 ###### Acciones:
-|  metodos |  tipo de dato |
+
+| metodos      | tipo de dato |
 | ------------ | ------------ |
-|  getCelsius() |  int |
+| getCelsius() | int          |
 
 #### Pase 3 - Diagrama de clase
+
 Tenga en cuenta que un diagrama de clase esta conformado por 3 partes.
+
 - Nombre de la clase
 - Atributos
 - Metodos o acciones.
@@ -75,12 +86,11 @@ Tenga en cuenta que un diagrama de clase esta conformado por 3 partes.
 Para los atributos vamos a utilizar el encapsulamiento privado (-)
 Para los metodos vamos a utilizar el encapsulamiento publico. (+)
 
-
 ![Diagrama](./img/diagrama.png)
 
 ## Codigo
 
-*NOTA: no pose logica Arduino*
+_NOTA: no pose logica Arduino_
 
 ```cpp
 //Genero las clases.
@@ -88,28 +98,30 @@ class Led{
 	//declaro los atributos:
 	private:
 	int pin;
-	
+
 	//Creo el  metodo contructor.
 	public:
 	Led(int p){}
-	
+
 	//metodos de acciones/comportamiento
 	void encender(){}
 	void apagar(){}
-	
+
 };
-class Button{
-	//declaro los atributos:
-	private:
-	int pin;
-	
+
+class SensorTemperatura
+{
+		//declaro los atributos:
+
+private:
+    int pin;
 	//Creo el  metodo contructor.
-	public:
-	Button(int p){}
-	
+
+public:
+    SensorTemperatura(int p){}
 	//metodos de acciones/comportamiento
-	bool estaPresionado(){}	
-	
+
+    int getCelsius(){}
 };
 
 /* PROGRAMA PRINCIPAL*/
@@ -146,7 +158,7 @@ void loop()
         led_azul.apagar();
         led_verde.apagar();
         led_rojo.encender();
-    }    
+    }
 }
 
 ```

@@ -48,7 +48,7 @@ public:
     int getCelsius()
     {
         
-        return !digitalRead(pin);
+        return analogRead(pin);
     }
 };
 /************ PROGRAMA PRINCIPAL ********************/
