@@ -3,9 +3,9 @@
 /
 Realizar un programa el cual me permita ver en un LED RGB el estado de la temperatura hambiente.
 
-Si la temperatura es menor a 15º C, el LED azul se encenderá.
-Si la temperatura se encutra entre 15º y 25º C, el LED verde se encenderá.
-Si la temperatura es mayor a 25º C, el LED rojo se encenderá.
+- Si la temperatura es menor a 15º C, el LED azul se encenderá.
+- Si la temperatura se encutra entre 15º y 25º C, el LED verde se encenderá.
+- Si la temperatura es mayor a 25º C, el LED rojo se encenderá.
 
 ## Diagrama de clase
 
